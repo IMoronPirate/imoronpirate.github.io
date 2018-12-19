@@ -11,9 +11,13 @@ task :build, :message do |t, args|
   # checkout master, copy files and commit
   system "git checkout master" or fail "## [FAILED] master checkout".red
   puts "## [SUCCESS] Master checked out".green
+
   system "cp -r #{SITE_DIR}/* ."
   system "git commit --all -m \"#{args.message}\"" or fail "## [FAILED] commit to master ".red
-  puts "## [SUCCESS] website is live"
+  puts "## [SUCCESS] webpage committed".green
+
+  system "git push" or fail "## [FAILED] can't push".red
+  puts "## [SUCCESS] push done. Webpage is alive".green
 end
 
 

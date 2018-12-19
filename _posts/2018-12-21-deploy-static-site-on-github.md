@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Deploy locally build jekyll site on GitHub pages"
+title:  "How to deploy a locally builded Jekyll site on GitHub"
 date: 2018-12-19 14:19
 categories: code
 tags: github jekyll rakefile

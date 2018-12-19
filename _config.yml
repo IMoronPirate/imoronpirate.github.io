@@ -154,26 +154,26 @@ analytics:
 # Site Author
 author:
   name             : "I, moron pirate"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Lausanne"
-  email            : "i.moron.pirate@gmail.com"
+  avatar           : "/assets/pirate-penguin-small.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Arrgh!"
+  location         : "Lausanne, Swizerland"
+  #  email            : "i.moron.pirate@gmail.com"
   links:
-    - label: "Email"
+    - label: "e-mail"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:i.moron.pirate@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      #      url: "https://imoronpirate.github.io/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "GitHub"
+    - label: "IMoronPirate"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/IMoronPirate"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -187,9 +187,9 @@ footer:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
-    - label: "GitHub"
+    - label: "IMoronPirate"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/IMoronPirate"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -199,6 +199,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "e-mail"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:i.moron.pirate@gmail.com
 
 
 # Reading Files

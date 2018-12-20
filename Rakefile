@@ -12,7 +12,7 @@ task :build, :message do |t, args|
   system "git checkout master" or fail "## [FAILED] master checkout".red
   puts "## [SUCCESS] Master checked out".green
 
-  system "rm -r *"
+#  system "rm -r *"
   system "cp -r #{SITE_DIR}/* ."
   system "rm -r #{SITE_DIR}"
   system "git add -A" # commit all changes removes and new files

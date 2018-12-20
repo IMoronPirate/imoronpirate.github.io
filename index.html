@@ -111,24 +111,23 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <a class="site-title" href="/">I, moron pirate</a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/docs/quick-start-guide/" >Quick-Start Guide</a>
-            </li><li class="masthead__menu-item">
-              <a href="/year-archive/" >Posts</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/" >Categories</a>
-            </li><li class="masthead__menu-item">
-              <a href="/tags/" >Tags</a>
-            </li><li class="masthead__menu-item">
-              <a href="/page-archive/" >Pages</a>
-            </li><li class="masthead__menu-item">
-              <a href="/collection-archive/" >Collections</a>
-            </li><li class="masthead__menu-item">
-              <a href="https://google.com" >External Link</a>
-            </li></ul>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
         
         <button class="search__toggle" type="button">
-          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
             <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
           </svg>
         </button>
@@ -158,6 +157,14 @@
 <div itemscope itemtype="http://schema.org/Person">
 
   
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/pirate-penguin-small.png" alt="I, moron pirate" itemprop="image">
+      
+    </div>
+  
 
   <div class="author__content">
     
@@ -165,7 +172,7 @@
     
     
       <p class="author__bio" itemprop="description">
-        I am an amazing person.
+        Aaaarrrrgggghhhh! Get ready to sail the seven seas! <img class="emoji" title=":ship:" alt=":ship:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f6a2.png" height="20" width="20">
       </p>
     
   </div>
@@ -175,20 +182,24 @@
     <ul class="author__urls social-icons">
       
         <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Lausanne</span>
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Swizerland</span>
         </li>
       
 
       
         
           
-        
+            <li><a href="mailto:i.moron.pirate@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> e-mail</a></li>
           
         
           
         
           
         
+          
+        
+          
+            <li><a href="https://github.com/IMoronPirate" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> IMoronPirate</a></li>
           
         
           
@@ -197,13 +208,6 @@
 
       
 
-      
-        <li>
-          <a href="mailto:i.moron.pirate@gmail.com">
-            <meta itemprop="email" content="i.moron.pirate@gmail.com" />
-            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
-          </a>
-        </li>
       
 
       
@@ -285,6 +289,35 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
+        <a href="/coding/deploy-static-site-on-github/" rel="permalink">How to deploy a locally built Jekyll site on GitHub
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In this post, I will explain how I manage the publishing of this blog.
+The blog is hosted on GitHub pages
+but I build it locally on my personal computer.
+You...</p>
+  </article>
+</div>
+
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
         <a href="/recent/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
 </a>
       
@@ -312,8 +345,10 @@
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-    <div id="results" class="results"></div></div>
+        <div class="search-content__inner-wrap">
+<input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term...">
+    <div id="results" class="results"></div>
+</div>
       </div>
     
 
@@ -335,11 +370,17 @@
         
       
         
+          <li><a href="https://github.com/IMoronPirate" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> IMoronPirate</a></li>
+        
+      
+        
       
         
       
         
       
+        
+          <li><a href="mailto:i.moron.pirate@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> e-mail</a></li>
         
       
     
@@ -348,7 +389,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 I, moron pirate. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">© 2018 I, moron pirate. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>

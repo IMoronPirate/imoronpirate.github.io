@@ -155,8 +155,8 @@ analytics:
 author:
   name             : "I, moron pirate"
   avatar           : "/assets/pirate-penguin-small.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Aaaarrrrgggghhhh! Get ready to sail the seven seas! :ship:"
-  location         : "Swizerland"
+  bio              : "Aaaarrrrgggghhhh! :ship:"
+  location         : "Swizterland"
   #  email            : "i.moron.pirate@gmail.com"
   links:
     - label: "e-mail"

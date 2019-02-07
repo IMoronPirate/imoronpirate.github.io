@@ -1,21 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2018-12-20T17:24:03+01:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2018-12-19T14:19:00+01:00</published><updated>2018-12-19T14:19:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;In this post, I will explain how I manage the publishing of this blog.
-The blog is hosted on &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;GitHub pages&lt;/a&gt;
-but I build it locally on my personal computer.
-You may ask why I do this.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2019-02-07T13:40:21+01:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2019-02-07T13:38:00+01:00</published><updated>2019-02-07T13:38:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;You may ask why I should build the blog locally when GitHub does it for me.
+Well there are several reasons, for instance if you use some unsupported plugins,
+but here I will discuss only one practical reason that it made me spent some
+time to fix it.&lt;/p&gt;
 
-&lt;p&gt;a local builded 
-site on GitHub. Being this only my first post,&lt;/p&gt;
+&lt;p&gt;I work usually on two PCs one in the office and one at home. 
+I have all my code in several git repositories hosted on &lt;a href=&quot;https://about.gitlab.com/&quot; target=&quot;_blank&quot;&gt;GitLab&lt;/a&gt; and 
+&lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;. 
+Thus, when I implement some feature, let say in the office, 
+I &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt; the code to the host and then at 
+home I &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; the new code and &lt;em&gt;vice versa&lt;/em&gt;.
+In this way, I have always my code up-to-date in both stations.&lt;/p&gt;
 
-&lt;p&gt;As my first post, I think is important&lt;/p&gt;</content><author><name>I, moron pirate</name></author><category term="github" /><category term="jekyll" /><category term="rakefile" /><summary type="html">In this post, I will explain how I manage the publishing of this blog. The blog is hosted on GitHub pages but I build it locally on my personal computer. You may ask why I do this.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://imoronpirate.github.io/recent/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-12-18T16:27:13+01:00</published><updated>2018-12-18T16:27:13+01:00</updated><id>https://imoronpirate.github.io/recent/welcome-to-jekyll</id><content type="html" xml:base="https://imoronpirate.github.io/recent/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;When the idea of starting this blog come out, I found that it was not possible
+to do such a thing with the 
+&lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;GitHub Pages&lt;/a&gt;. 
+Of course, GitHub Pages is a cheap and easy way to host a blog using 
+&lt;a href=&quot;https://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt; but unfortunately 
+it breaks my development cycle &lt;code class=&quot;highlighter-rouge&quot;&gt;work -&amp;gt; commit -&amp;gt; push -&amp;gt; pull -&amp;gt; work&lt;/code&gt;.
+As a matter of facts, if you use Jekyll hosted in GitHub Pages the blog is
+built every time you push the code on the branch master.
+There you can see the problem. If you are working on a post in the office,
+then you want to review it at home before publishing this is not possible.
+When you push it (to have the draft at home) 
+GitHub build and publish your post (:angry:).&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;As mentioned, GitHub host a blog/webpage/whatever so one does not need to
+let GitHub build it. One can build a blog in whatever way you
+want and put in the master branch of the repository the html files for
+the generated site. The issue now is where to keep the files needed for
+the generation of the blog.
+A possible solution is to have a repository for the source code
+and a repository for the hosting of the blog. However,
+I did not like the idea of having two repositories for just one project.
+So, I tought to use a branch for the developement into the main repository:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- dev &lt;span class=&quot;c&quot;&gt;#contains the source code to generate the blog&lt;/span&gt;
+- master &lt;span class=&quot;c&quot;&gt;#contains the html pages &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The only issue is how to avoid the manually coping of the file generated
+while you are in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch and then commit those files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;.
+Thus, I wrote a rakefile to handle all of this&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;SITE_DIR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;_site&quot;&lt;/span&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;desc&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Build Jekyll site, copy files to master and commit/push to github&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:build&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:message&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Missing &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; argument for commit. Build with `rake build[&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;]`&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;build_jekyll&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# checkout master, copy files and commit&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git checkout master&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fail&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [FAILED] master checkout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [SUCCESS] Master checked out&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
+
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;cp -r &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SITE_DIR&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/* .&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rm -r &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;SITE_DIR&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git add -A&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# commit all changes &lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git commit -m &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fail&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [FAILED] commit to master &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [SUCCESS] webpage committed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
+
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;git push&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fail&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [FAILED] can't push&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [SUCCESS] push done. Webpage is alive&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hi, Moron Pirate'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Moron Pirate' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>I, moron pirate</name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;build_jekyll&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## Building jekyll&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;system&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll build&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fail&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [FAILED] Jekyll build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;## [SUCCESS] Jekyll Build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The file is pretty straightforward. 
+From the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch, when you execute it, it builds
+the webpage, checkouts
+the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, and copies the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory
+in the repository main directory. 
+At the end all changes are committed and push,
+then GitHub makes it live.
+Therefore, this is a solution to my development cycle
+since I can work in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch and there I can commit and push
+all the things I want (they not become live in the blog :+1:),
+in this way I can syncronize the repositories into my two stations.
+When I am happy with a post and I want to publish it,
+I just lunch the &lt;code class=&quot;highlighter-rouge&quot;&gt;rake&lt;/code&gt; task:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake build[&lt;span class=&quot;s2&quot;&gt;&quot;commit message&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;and my post is published automatically.&lt;/p&gt;
+
+&lt;p&gt;This post ends here, if you have comments/feedbacks drop me an &lt;a href=&quot;mailto:i.moron.pirate@gmail.com&quot;&gt;email&lt;/a&gt;,
+they are really appreciated.&lt;/p&gt;
+
+&lt;p&gt;Ciao!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;PS the color in the output strings it is made changing the
+the String attributes:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color_code&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[0m&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;31&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;yellow&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blue&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pink&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;light_blue&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;colorize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>I, moron pirate</name></author><category term="github" /><category term="jekyll" /><category term="rakefile" /><summary type="html">You may ask why I should build the blog locally when GitHub does it for me. Well there are several reasons, for instance if you use some unsupported plugins, but here I will discuss only one practical reason that it made me spent some time to fix it.</summary></entry></feed>

@@ -159,7 +159,7 @@ author:
   location         : "Swizterland"
   #  email            : "i.moron.pirate@gmail.com"
   links:
-    - label: "e-mail"
+    - label: "i.moron.pirate"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:i.moron.pirate@gmail.com
     - label: "Website"

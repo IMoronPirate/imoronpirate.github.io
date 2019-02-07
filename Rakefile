@@ -15,7 +15,7 @@ task :build, :message do |t, args|
 #  system "rm -r *"
   system "cp -r #{SITE_DIR}/* ."
   system "rm -r #{SITE_DIR}"
-  system "git add -A" # commit all changes removes and new files
+  system "git add -A" # commit all changes, removed and new files
   system "git commit -m \"#{args.message}\"" or fail "## [FAILED] commit to master ".red
   puts "## [SUCCESS] webpage committed".green
 
@@ -25,7 +25,7 @@ end
 
 
 def build_jekyll
-  puts "## Build and commit to master"
+  puts "## Building jekyll"
   system "jekyll build" or fail "## [FAILED] Jekyll build".red
   puts "## [SUCCESS] Jekyll Build".green
 end

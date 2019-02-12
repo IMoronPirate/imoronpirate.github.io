@@ -130,7 +130,7 @@ naver_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : "imoronpirate"
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -343,7 +343,7 @@ defaults:
       layout: single
       author_profile: false
       read_time: true
-      share: false
+      share: true
       related: true
       comments: # true
 

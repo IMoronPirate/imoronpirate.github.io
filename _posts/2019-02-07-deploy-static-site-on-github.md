@@ -42,7 +42,7 @@ the generation of the blog.
 A possible solution is to have a repository for the source code
 and a repository for the hosting of the blog. However,
 I did not like the idea of having two repositories for just one project.
-So, I tought to use a branch for the developement into the main repository:
+So, I thought to use a branch for the development into the main repository:
 ```bash
 - dev #contains the source code to generate the blog
 - master #contains the html pages 
@@ -93,7 +93,7 @@ then GitHub makes it live.
 Therefore, this is a solution to my development cycle
 since I can work in the `dev` branch and there I can commit and push
 all the things I want (they not become live in the blog :+1:),
-in this way I can syncronize the repositories into my two stations.
+in this way I can synchronize the repositories into my two stations.
 When I am happy with a post and I want to publish it,
 I just lunch the `rake` task:
 ```shell

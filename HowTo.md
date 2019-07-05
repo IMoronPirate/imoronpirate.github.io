@@ -1,6 +1,6 @@
 # HowTo
 
-This is a file with the collection of commands I need to remember for runing the blog.
+This is a file with the collection of commands for running the blog.
 
 ## Jekyll
 
@@ -9,7 +9,7 @@ This is a file with the collection of commands I need to remember for runing the
 
 ## Rakefile
 
-`rake build["commint message"]`
+`rake build["commit message"]`
 
 
 ## ToDo

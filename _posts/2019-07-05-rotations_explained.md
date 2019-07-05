@@ -43,6 +43,14 @@ vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle
 $$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
 Therefore, we can use the Rodrigues' formula for $$\theta$$ and $$\bm{u}$$.
 
+## Get Euler's angles from rotation matrix
+
+A common case is when we know the rotation matrix as we can extract above
+and we want to translate this in Euler's angles.
+First of all, we have to define which Euler rotation since there are many of
+them. In my company, we use an Euler-321 rotation.
+
+
 This post ends here, if you have comments/feedbacks drop me an [email](mailto:i.moron.pirate@gmail.com),
 they are appreciated.
 

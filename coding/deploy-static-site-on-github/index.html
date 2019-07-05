@@ -109,11 +109,8 @@
 
 
 
-    <!-- start custom head snippets -->
+    
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
 
   </head>
 
@@ -227,7 +224,7 @@ the generation of the blog.
 A possible solution is to have a repository for the source code
 and a repository for the hosting of the blog. However,
 I did not like the idea of having two repositories for just one project.
-So, I tought to use a branch for the developement into the main repository:</p>
+So, I thought to use a branch for the development into the main repository:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- dev <span class="c">#contains the source code to generate the blog</span>
 - master <span class="c">#contains the html pages </span>
 </code></pre></div></div>
@@ -276,7 +273,7 @@ then GitHub makes it live.
 Therefore, this is a solution to my development cycle
 since I can work in the <code class="highlighter-rouge">dev</code> branch and there I can commit and push
 all the things I want (they not become live in the blog <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20">),
-in this way I can syncronize the repositories into my two stations.
+in this way I can synchronize the repositories into my two stations.
 When I am happy with a post and I want to publish it,
 I just lunch the <code class="highlighter-rouge">rake</code> task:</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake build[<span class="s2">"commit message"</span><span class="o">]</span>
@@ -399,6 +396,16 @@ the String attributes:</p>
 
 
       
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/math/coding/rotations_explained/" class="pagination--pager" title="Everything you ever wanted to know about sex rotations
+">Next</a>
+    
+  </nav>
+
     </div>
 
     
@@ -411,9 +418,36 @@ the String attributes:</p>
       <div class="grid__wrapper">
         
           
-            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/math/coding/rotations_explained/" rel="permalink">Everything you ever wanted to know about <del>sex</del> rotations
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Rotation matrix from one vector to another
+
+</p>
+  </article>
+</div>
+        
       </div>
     </div>
+  
   
 </div>
     </div>

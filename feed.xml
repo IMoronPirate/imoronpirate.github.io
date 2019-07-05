@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2019-02-12T10:33:05+01:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2019-02-07T13:38:00+01:00</published><updated>2019-02-07T13:38:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;You may ask why I should build the blog locally when GitHub does it for me.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2019-07-05T14:40:46+02:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">Everything you ever wanted to know about ~~sex~~ rotations</title><link href="https://imoronpirate.github.io/math/coding/rotations_explained/" rel="alternate" type="text/html" title="Everything you ever wanted to know about ~~sex~~ rotations" /><published>2019-07-05T10:26:00+02:00</published><updated>2019-07-05T10:26:00+02:00</updated><id>https://imoronpirate.github.io/math/coding/rotations_explained</id><content type="html" xml:base="https://imoronpirate.github.io/math/coding/rotations_explained/">&lt;h2 id=&quot;rotation-matrix-from-one-vector-to-another&quot;&gt;Rotation matrix from one vector to another&lt;/h2&gt;
+
+&lt;p&gt;Usually we have two vectors, for instance describing two planes, and
+we would like to rotate one vector, &lt;script type=&quot;math/tex&quot;&gt;\vec{p}&lt;/script&gt;, to the other one, &lt;script type=&quot;math/tex&quot;&gt;\vec{d}&lt;/script&gt;.
+The rotation matrix for this rotation is given by the&lt;/p&gt;
+
+&lt;p&gt;I work usually on two PCs one in the &lt;del&gt;office&lt;/del&gt; and one at home. 
+I have all my code in several git repositories hosted on &lt;a href=&quot;https://about.gitlab.com/&quot; target=&quot;_blank&quot;&gt;GitLab&lt;/a&gt; and 
+&lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;. 
+Thus, when I implement some feature, let say in the office, 
+I &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt; the code to the host and then at 
+home I &lt;code class=&quot;highlighter-rouge&quot;&gt;pull&lt;/code&gt; the new code and &lt;em&gt;vice versa&lt;/em&gt;.
+In this way, I have always my code up-to-date in both stations.&lt;/p&gt;
+
+&lt;p&gt;A possible solution is to have a repository for the source code
+and a repository for the hosting of the blog. However,
+I did not like the idea of having two repositories for just one project.
+So, I tought to use a branch for the developement into the main repository:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- dev &lt;span class=&quot;c&quot;&gt;#contains the source code to generate the blog&lt;/span&gt;
+- master &lt;span class=&quot;c&quot;&gt;#contains the html pages &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The only issue is how to avoid the manually coping of the file generated
+while you are in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch and then commit those files in the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;.
+Thus, I wrote a rakefile to handle all of this&lt;/p&gt;
+
+&lt;p&gt;This post ends here, if you have comments/feedbacks drop me an &lt;a href=&quot;mailto:i.moron.pirate@gmail.com&quot;&gt;email&lt;/a&gt;,
+they are really appreciated.&lt;/p&gt;
+
+&lt;p&gt;Ciao!&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>I, moron pirate</name></author><category term="Euler" /><category term="matrix" /><category term="Rotations" /><summary type="html">Rotation matrix from one vector to another</summary></entry><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2019-02-07T13:38:00+01:00</published><updated>2019-02-07T13:38:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;You may ask why I should build the blog locally when GitHub does it for me.
 Well there are several reasons, for instance if you use some unsupported plugins,
 but here I will discuss only one practical reason that it made me spent some
 time to fix it.&lt;/p&gt;
@@ -32,7 +64,7 @@ the generation of the blog.
 A possible solution is to have a repository for the source code
 and a repository for the hosting of the blog. However,
 I did not like the idea of having two repositories for just one project.
-So, I tought to use a branch for the developement into the main repository:&lt;/p&gt;
+So, I thought to use a branch for the development into the main repository:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- dev &lt;span class=&quot;c&quot;&gt;#contains the source code to generate the blog&lt;/span&gt;
 - master &lt;span class=&quot;c&quot;&gt;#contains the html pages &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -81,7 +113,7 @@ then GitHub makes it live.
 Therefore, this is a solution to my development cycle
 since I can work in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch and there I can commit and push
 all the things I want (they not become live in the blog :+1:),
-in this way I can syncronize the repositories into my two stations.
+in this way I can synchronize the repositories into my two stations.
 When I am happy with a post and I want to publish it,
 I just lunch the &lt;code class=&quot;highlighter-rouge&quot;&gt;rake&lt;/code&gt; task:&lt;/p&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rake build[&lt;span class=&quot;s2&quot;&gt;&quot;commit message&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;

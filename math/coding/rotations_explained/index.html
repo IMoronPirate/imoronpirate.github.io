@@ -1,0 +1,423 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.14.1 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Everything you ever wanted to know about sex rotations | I, moron pirate</title>
+<meta name="description" content="Rotation matrix from one vector to another">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="I, moron pirate">
+<meta property="og:title" content="Everything you ever wanted to know about sex rotations">
+<meta property="og:url" content="https://imoronpirate.github.io/math/coding/rotations_explained/">
+
+
+  <meta property="og:description" content="Rotation matrix from one vector to another">
+
+
+
+  <meta property="og:image" content="https://imoronpirate.github.io/assets/pirate-penguin-small.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-07-05T10:26:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://imoronpirate.github.io/math/coding/rotations_explained/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://imoronpirate.github.io",
+      "logo": "https://imoronpirate.github.io/assets/pirate-penguin-small.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "I, moron pirate",
+      "url": "https://imoronpirate.github.io",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="vntvKR6ts2d6Dk1T0rDzKeWP_APVCYUbPm0FG7JGLok" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="I, moron pirate Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">I, moron pirate</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Everything you ever wanted to know about sex rotations">
+    <meta itemprop="description" content="Rotation matrix from one vector to another">
+    <meta itemprop="datePublished" content="July 05, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Everything you ever wanted to know about <del>sex</del> rotations
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="rotation-matrix-from-one-vector-to-another">Rotation matrix from one vector to another</h2>
+
+<p>Usually we have two vectors, for instance describing two planes, and
+we would like to rotate one vector, <script type="math/tex">\vec{p}</script>, to the other one, <script type="math/tex">\vec{d}</script>.
+The rotation matrix for this rotation is given by the</p>
+
+<p>I work usually on two PCs one in the <del>office</del> and one at home. 
+I have all my code in several git repositories hosted on <a href="https://about.gitlab.com/" target="_blank">GitLab</a> and 
+<a href="https://github.com/" target="_blank">GitHub</a>. 
+Thus, when I implement some feature, let say in the office, 
+I <code class="highlighter-rouge">push</code> the code to the host and then at 
+home I <code class="highlighter-rouge">pull</code> the new code and <em>vice versa</em>.
+In this way, I have always my code up-to-date in both stations.</p>
+
+<p>A possible solution is to have a repository for the source code
+and a repository for the hosting of the blog. However,
+I did not like the idea of having two repositories for just one project.
+So, I tought to use a branch for the developement into the main repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- dev <span class="c">#contains the source code to generate the blog</span>
+- master <span class="c">#contains the html pages </span>
+</code></pre></div></div>
+
+<p>The only issue is how to avoid the manually coping of the file generated
+while you are in the <code class="highlighter-rouge">dev</code> branch and then commit those files in the <code class="highlighter-rouge">master</code>.
+Thus, I wrote a rakefile to handle all of this</p>
+
+<p>This post ends here, if you have comments/feedbacks drop me an <a href="mailto:i.moron.pirate@gmail.com">email</a>,
+they are really appreciated.</p>
+
+<p>Ciao!</p>
+
+<hr />
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#euler" class="page__taxonomy-item" rel="tag">Euler</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#matrix" class="page__taxonomy-item" rel="tag">matrix</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rotations" class="page__taxonomy-item" rel="tag">Rotations</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#coding" class="page__taxonomy-item" rel="tag">coding</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#math" class="page__taxonomy-item" rel="tag">math</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-05T10:26:00+02:00">July 05, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Everything+you+ever+wanted+to+know+about+~~sex~~+rotations%20https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations_explained%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations_explained%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations_explained%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations_explained%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coding/deploy-static-site-on-github/" class="pagination--pager" title="How to deploy a locally built Jekyll site on GitHub
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/coding/deploy-static-site-on-github/" rel="permalink">How to deploy a locally built Jekyll site on GitHub
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">You may ask why I should build the blog locally when GitHub does it for me.
+Well there are several reasons, for instance if you use some unsupported plugins,...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/IMoronPirate" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> IMoronPirate</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="mailto:i.moron.pirate@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> e-mail</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 I, moron pirate. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  </body>
+</html>

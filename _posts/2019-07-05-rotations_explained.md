@@ -10,18 +10,25 @@ $$
     \newcommand{\bm}[1]{\boldsymbol{#1}}
 $$
 
+Rotations are omnipresent in several aspects from spatial rotation to
+rotations in any abstract space. different 3D coordinate systems, different Euler angles representations, Quaternions, Axis angles
+However, every time one has to implement
+a rotation always faces the issue of conventions and parametrisation: using
+the angle-axis representation, quaternions or Euler's one, and, of course,
+which Euler's parametrisation.
 
-## Rotation matrix from one vector to another one
+In this post, I would present which parametrisation I use that I think it
+it very useful in several situation I faced.
 
-Usually we have two vectors, for instance describing two planes, and
-we would like to rotate one vector, $$\bm{a}$$, to the other one, $$\bm{b}$$.
-To extract this rotation matrix, before we need to understand how to build the
-rotation matrix around an axis of a certain angle.
+## Rodrigues' formula
 
-### Rodrigues' formula
+To construct the rotation matrix,
+given the rotation axis and the angle, the
+[Rodrigues' formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula) 
+is excellent.
 
-The rotation matrix around and axis $$\bm{k}$$ (where $$|\bm{k}|=1$$) of an angle $$\theta$$ is
-given by the [Rodrigues' formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula)
+The rotation matrix around and axis $$\bm{k}$$ (where $$|\bm{k}|=1$$)
+of an angle $$\theta$$ is
 
 $$
 \bm{R} = \bm{I} + (\sin\theta)\bm{K} + (1-\cos\theta)\bm{K}^2,
@@ -38,9 +45,15 @@ k_3 & 0 &-k_1\\
 \end{pmatrix}
 $$
 
+### Rotation matrix from one vector to another one
+
+Usually we have two vectors, for instance describing two planes, and
+we would like to rotate one vector, $$\bm{a}$$, to the other one, $$\bm{b}$$.
+To extract this rotation matrix, before we need to understand how to build the
+rotation matrix around an axis of a certain angle.
+
 In the case we want to rotate the vector $$\bm{a}$$ to coincide to the
-vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle
-$$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
+vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle $$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
 Therefore, we can use the Rodrigues' formula for $$\theta$$ and $$\bm{u}$$.
 
 ## Get Euler's angles from rotation matrix

@@ -11,6 +11,8 @@ or better
 `bundle exec jekyll serve`
 
 Use the options `--drafts` to include drafts post in the building process.
+Use the options `--unpublished` to include post with
+`published: false` in the building process.
 
 
 ## Rakefile

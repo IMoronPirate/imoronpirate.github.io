@@ -10,15 +10,12 @@ $$
     \newcommand{\bm}[1]{\boldsymbol{#1}}
 $$
 
-Rotations are omnipresent in several aspects from spatial rotation to
-rotations in any abstract space. different 3D coordinate systems, different Euler angles representations, Quaternions, Axis angles
-However, every time one has to implement
-a rotation always faces the issue of conventions and parametrisation: using
-the angle-axis representation, quaternions or Euler's one, and, of course,
-which Euler's parametrisation.
+Almost certainty, at some point, one has to deal with rotations.
+Promptly, one encounters different Euler's angles representations,
+Quaternions, axis-angles representations, and so forth.
 
-In this post, I would present which parametrisation I use that I think it
-it very useful in several situation I faced.
+In this post, I would present which parametrization I use that I think it
+it very useful in several situations I faced.
 
 ## Rodrigues' formula
 
@@ -53,15 +50,61 @@ To extract this rotation matrix, before we need to understand how to build the
 rotation matrix around an axis of a certain angle.
 
 In the case we want to rotate the vector $$\bm{a}$$ to coincide to the
-vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle $$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
+vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle
+$$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
 Therefore, we can use the Rodrigues' formula for $$\theta$$ and $$\bm{u}$$.
 
 ## Get Euler's angles from rotation matrix
 
-A common case is when we know the rotation matrix as we can extract above
-and we want to translate this in Euler's angles.
-First of all, we have to define which Euler rotation since there are many of
-them. In my company, we use an Euler-321 rotation.
+Suppose that you use the Rodrigues' formula and you have the rotation matrix:
+
+$$
+\bm{R} = \begin{pmatrix}
+R_{11} & R_{12} & R_{13} \\
+R_{21} & R_{22} & R_{23} \\
+R_{31} & R_{32} & R_{33} \\
+\end{pmatrix}.
+$$
+
+Then, you discovery that the API ou are using for the rotation accepts only
+the Euler's angle. Than, the reaction is *f**k this! I quit!*
+
+After you calm down, you ask yourself: ok how can I determined the angles from
+the rotation matrix? And the you realize which angles? There are different
+representation of [Euler's angles](https://en.wikipedia.org/wiki/Euler_angles)!
+*I am really done with this s**t!*
+
+*Breath! Stay calm! Breath!*
+
+The API is a $$ZYX$$ representation, thanks to
+[Wikipedia](https://en.wikipedia.org/wiki/Euler_angles) you
+the rotation matrix as function of the angles.
+The rotation $$ZYX$$ consists of a rotation of $$\phi$$ around
+$$z$$-axis, then a rotation around $$y$$-axis of an angle $$\theta$$, and
+finally a rotation around the $$x$$-axis of an angle $$\psi$$.
+Therefore, the rotation matrix
+$$\bm{R} = \bm{R}_x(\psi)\cdot \bm{R}_y(\theta)\cdot \bm{R}_z(\phi)$$
+is
+
+$$
+\bm{R} = \begin{pmatrix}
+c_\phi c_\theta & c_\phi s_\theta s_\psi - c_\psi s_\phi & s_\phi s_\psi + c_\phi c_\psi s_\theta \\
+c_\theta s_\phi & c_\phi c_\psi + s_\phi s_\theta s_\psi & c_\psi s_\phi s_\theta - c_\phi s_\psi \\
+-s_\theta & c_\theta s_\psi & c_\theta c_\psi
+\end{pmatrix}.
+$$
+
+The angles can be extracted if we know the element of the rotation matrix
+$$R_{i,j}$$, $$j = 1,2,3$$ and $$j=1,2,3$$
+
+$$
+\bm{R} = \begin{pmatrix}
+R_{11} & R_{12} & R_{13} \\
+R_{21} & R_{22} & R_{23} \\
+R_{31} & R_{32} & R_{33} \\
+\end{pmatrix}
+$$
+
 
 
 This post ends here, if you have comments/feedbacks drop me an [email](mailto:i.moron.pirate@gmail.com),
@@ -70,3 +113,5 @@ they are appreciated.
 Ahoy!
 
 ---
+
+

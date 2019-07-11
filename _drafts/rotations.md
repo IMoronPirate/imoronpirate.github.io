@@ -129,10 +129,25 @@ $$\cos\theta <0$$ then $$\psi = \atantwo(-R_{32}, -R_{33})$$.
 We can write this compactly as
 
 $$
-\psi = \atantwo\Big(\frac{R_{32}}{\cos\theta}, \frac{R_{33}}{\cos\theta}\Big)
+\psi = \atantwo\Big(\frac{R_{32}}{\cos\theta}, \frac{R_{33}}{\cos\theta}\Big),
 $$
 
-For the angle $$\phi$$ instead
+if $$\cos\theta\neq 0$$ (the case $$\cos\theta =0$$ is discussed below).
+For the angle $$\phi$$, we note that $$R_{21}/R_{11} = \tan\phi$$.
+Therefore,
+
+$$
+\phi = \atantwo\Big(\frac{R_{21}}{\cos\theta}, \frac{R_{11}}{\cos\theta}\Big),
+$$
+
+where again we divided for $$\cos\theta$$ for taking the correct sign.
+Thus, we have a set of angles from our rotation matrix if
+$$\cos\theta \neq 0$$.
+
+### If $$\cos\theta = 0$$
+
+
+
 
 This post ends here, if you have comments/feedbacks drop me an [email](mailto:i.moron.pirate@gmail.com),
 they are appreciated.

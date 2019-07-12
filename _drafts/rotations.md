@@ -1,8 +1,8 @@
 ---
 title:  "Everything you ever wanted to know about ~~sex~~ rotations"
 date: 2019-07-05 10:26
-categories: math coding
-tags: Euler Rotations
+categories: ["math", "coding"]
+tags: ["Euler's angles", "Rotations"]
 mathjax: true
 ---
 
@@ -15,14 +15,14 @@ Almost certainty, at some point, one has to deal with rotations.
 Promptly, one encounters different Euler's angles representations,
 Quaternions, axis-angles representations, and so forth.
 
-In this post, I would present which parametrization I use that I think it
-it very useful in several situations I faced.
+In this post, I would present which parametrization I use that I found
+very useful in several situations I faced.
 
 ## Rodrigues' formula
 
 To construct the rotation matrix,
 given the rotation axis and the angle, the
-[Rodrigues' formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula) 
+[Rodrigues' formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula)
 is excellent.
 
 The rotation matrix around and axis $$\bm{k}$$ (where $$|\bm{k}|=1$$)
@@ -47,10 +47,9 @@ $$
 
 Usually we have two vectors, for instance describing two planes, and
 we would like to rotate one vector, $$\bm{a}$$, to the other one, $$\bm{b}$$.
-To extract this rotation matrix, before we need to understand how to build the
-rotation matrix around an axis of a certain angle.
+This is a perfect application for the Rodrigues' formula.
 
-In the case we want to rotate the vector $$\bm{a}$$ to coincide to the
+To rotate the vector $$\bm{a}$$ in order to coincide with the
 vector $$\bm{b}$$, we need to rotate $$\bm{a}$$ of an angle
 $$\theta = \bm{a}\cdot \bm{b}$$ around the axis $$\bm{u} = \bm{a} \times \bm{b}$$.
 Therefore, we can use the Rodrigues' formula for $$\theta$$ and $$\bm{u}$$.
@@ -67,7 +66,7 @@ R_{31} & R_{32} & R_{33} \\
 \end{pmatrix}.
 $$
 
-Then, you discovery that the API you are using for the rotation accepts only
+Then, you discovery that the API you are using for rotations accepts only
 the Euler's angle. Than, the reaction is *f**k this! I quit!*
 
 After you calm down, you ask yourself: ok how can I determined the angles from
@@ -110,12 +109,11 @@ $$
 
 ### Angles calculation
 
-We can easily see that $$R_{31} = -\sin\theta$$,
-therefore,
+We can easily see that $$R_{31} = -\sin\theta$$, therefore,
 
 $$
-\theta = -\arcsin(R_{31})
-$$.
+\theta = -\arcsin(R_{31}).
+$$
 
 Note that the solution is unique in the range we have chosen.
 In addition, we can find $$\psi$$ from $$\psi = \arctan(R_{32}/R_{33})$$.
@@ -144,14 +142,92 @@ where again we divided for $$\cos\theta$$ for taking the correct sign.
 Thus, we have a set of angles from our rotation matrix if
 $$\cos\theta \neq 0$$.
 
-### If $$\cos\theta = 0$$
+### If $$\bm{\cos\theta = 0}$$
+
+If $$\cos\theta$$ is zero we cannot use the formulas above.
+Thus, we need to analyze two cases $$\theta = \pm \pi/2$$.
+
+#### $$\bm{\theta = \pi/2}$$ case
+
+It is easy to see that
+
+$$
+\begin{aligned}
+R_{12} &= \sin\psi\cos\phi - \cos\psi\sin\phi = \sin(\psi-\phi),\\
+R_{13} &= \cos\psi\cos\phi + \sin\psi\sin\phi = \cos(\psi-\phi).\\
+\end{aligned}
+$$
+
+The rotation matrix become
+
+$$
+\bm{R} = \begin{pmatrix}
+0 & \sin(\psi-\phi) & \cos(\psi-\phi) \\
+0 & \cos(\psi-\phi) & -\sin(\psi-\phi) \\
+-1 & 0 & 0
+\end{pmatrix}.
+$$
+
+Any $$\psi$$ and $$\phi$$ that satisfy the following equation will be a
+valid solution:
+
+$$
+\psi - \phi = \atantwo(R_{12}, R_{13}),
+$$
+
+where only the difference is constrained. Thus, we can assign any value to
+one of the two angles, for instance $$\phi$$
+and take the value of $$\psi = \phi + \atantwo(R_{12}, R_{13})$$.
+
+#### $$\bm{\theta = -\pi/2}$$ case
+
+This case is similar to the previous one
+
+$$
+\begin{aligned}
+R_{12} &= -\sin\psi\cos\phi - \cos\psi\sin\phi = -\sin(\psi+\phi),\\
+R_{13} &= -\cos\psi\cos\phi + \sin\psi\sin\phi = -\cos(\psi+\phi).\\
+\end{aligned}
+$$
+
+Therefore, the solution is
+
+$$
+\begin{aligned}
+\psi + \phi &= \atantwo(-R_{12}, -R_{13}),\\
+\psi &= -\phi + \atantwo(-R_{12}, -R_{13}).
+\end{aligned}
+$$
+
+In both cases $$\theta = \pm \pi/2$$ we have that $$\psi$$ and $$\phi$$
+are linked. This phenomenon is called
+[Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock).
+
+### Pseudo-code
+
+To summarize, we can extract the angles with the following pseudo-code
+
+```c++
+if (abs(R31) != 1) { // cos(theta) != 0
+    theta = -asin(R31);
+    psi = atan2(R32/cos(theta), R33/cos(theta));
+    phi = atan2(R21/cos(theta), R11/cos(theta));
+} else {
+    phi = 0; // this is arbitrary, could be anything
+    if (R31 = -1) {
+        theta = pi/2;
+        psi = phi + atan2(R12, R13);
+    } else {
+        theta = -pi/2;
+        psi = -phi + atan2(-R12, R13);
+    }
+}
+```
 
 
-
+---
 
 This post ends here, if you have comments/feedbacks drop me an [email](mailto:i.moron.pirate@gmail.com),
 they are appreciated.
 
 Ahoy!
-
----

@@ -1,4 +1,207 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2019-07-08T13:21:07+02:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2019-02-07T13:38:00+01:00</published><updated>2019-02-07T13:38:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;You may ask why I should build the blog locally when GitHub does it for me.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="https://imoronpirate.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://imoronpirate.github.io/" rel="alternate" type="text/html" /><updated>2019-07-15T15:31:25+02:00</updated><id>https://imoronpirate.github.io/feed.xml</id><title type="html">I, moron pirate</title><subtitle>The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics</subtitle><author><name>I, moron pirate</name></author><entry><title type="html">Everything you ever wanted to know about ~~sex~~ rotations</title><link href="https://imoronpirate.github.io/math/coding/rotations/" rel="alternate" type="text/html" title="Everything you ever wanted to know about ~~sex~~ rotations" /><published>2019-07-15T15:29:00+02:00</published><updated>2019-07-15T15:29:00+02:00</updated><id>https://imoronpirate.github.io/math/coding/rotations</id><content type="html" xml:base="https://imoronpirate.github.io/math/coding/rotations/">&lt;script type=&quot;math/tex; mode=display&quot;&gt;\newcommand{\bm}[1]{\boldsymbol{#1}}
+    \DeclareMathOperator{\atantwo}{atan2}&lt;/script&gt;
+
+&lt;p&gt;Almost certainty, at some point, one has to deal with rotations.
+Promptly, one encounters different Euler’s angles representations,
+Quaternions, axis-angles representations, and so forth.&lt;/p&gt;
+
+&lt;p&gt;In this post, I would present which parametrization I use that I found
+very useful in several situations I faced.&lt;/p&gt;
+
+&lt;h2 id=&quot;rodrigues-formula&quot;&gt;Rodrigues’ formula&lt;/h2&gt;
+
+&lt;p&gt;To construct the rotation matrix,
+given the rotation axis and the angle, the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula&quot;&gt;Rodrigues’ formula&lt;/a&gt;
+is excellent.&lt;/p&gt;
+
+&lt;p&gt;The rotation matrix around and axis &lt;script type=&quot;math/tex&quot;&gt;\bm{k}&lt;/script&gt; (where &lt;script type=&quot;math/tex&quot;&gt;|\bm{k}|=1&lt;/script&gt;)
+of an angle &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bm{R} = \bm{I} + (\sin\theta)\bm{K} + (1-\cos\theta)\bm{K}^2,&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\bm{K} = [\bm{k}]_\mathrm{x}&lt;/script&gt; is the cross-product matrix given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\bm{K} \equiv \sum_{i=1}^3 (\bm{k} \times \hat{\bm{e}}_i) \otimes \hat{\bm{e}}_i =
+\begin{pmatrix}
+0 &amp;-k_3 &amp;k_2\\
+k_3 &amp; 0 &amp;-k_1\\
+-k_2 &amp; k_1 &amp;0
+\end{pmatrix} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;rotation-matrix-from-one-vector-to-another-one&quot;&gt;Rotation matrix from one vector to another one&lt;/h3&gt;
+
+&lt;p&gt;Usually we have two vectors, for instance describing two planes, and
+we would like to rotate one vector, &lt;script type=&quot;math/tex&quot;&gt;\bm{a}&lt;/script&gt;, to the other one, &lt;script type=&quot;math/tex&quot;&gt;\bm{b}&lt;/script&gt;.
+This is a perfect application for the Rodrigues’ formula.&lt;/p&gt;
+
+&lt;p&gt;To rotate the vector &lt;script type=&quot;math/tex&quot;&gt;\bm{a}&lt;/script&gt; in order to coincide with the
+vector &lt;script type=&quot;math/tex&quot;&gt;\bm{b}&lt;/script&gt;, we need to rotate &lt;script type=&quot;math/tex&quot;&gt;\bm{a}&lt;/script&gt; of an angle
+&lt;script type=&quot;math/tex&quot;&gt;\theta = \bm{a}\cdot \bm{b}&lt;/script&gt; around the axis &lt;script type=&quot;math/tex&quot;&gt;\bm{u} = \bm{a} \times \bm{b}&lt;/script&gt;.
+Therefore, we can use the Rodrigues’ formula for &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\bm{u}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;get-eulers-angles-from-the-rotation-matrix&quot;&gt;Get Euler’s angles from the rotation matrix&lt;/h2&gt;
+
+&lt;p&gt;Suppose that you used the Rodrigues’ formula and you have the rotation matrix:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\bm{R} = \begin{pmatrix}
+R_{11} &amp; R_{12} &amp; R_{13} \\
+R_{21} &amp; R_{22} &amp; R_{23} \\
+R_{31} &amp; R_{32} &amp; R_{33} \\
+\end{pmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Then, you discovery that the API you are using for rotations accepts only
+the Euler’s angle. Than, the reaction is &lt;em&gt;f**k this! I quit!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;After you calm down, you ask yourself: ok how can I determined the angles from
+the rotation matrix? And then you realize: which angles? There are different
+representation of &lt;a href=&quot;https://en.wikipedia.org/wiki/Euler_angles&quot;&gt;Euler’s angles&lt;/a&gt;!
+&lt;em&gt;I am really done with this s**t! I am out!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Breath! Stay calm! Breath!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The API is a &lt;script type=&quot;math/tex&quot;&gt;ZYX&lt;/script&gt; representation, thanks to
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Euler_angles&quot;&gt;Wikipedia&lt;/a&gt; you have
+the rotation matrix as function of the angles.
+The rotation &lt;script type=&quot;math/tex&quot;&gt;ZYX&lt;/script&gt; consists of a rotation of &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; around
+&lt;script type=&quot;math/tex&quot;&gt;z&lt;/script&gt;-axis, then a rotation around &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;-axis of an angle &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt;, and
+finally a rotation around the &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;-axis of an angle &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt;.
+Therefore, the rotation matrix
+&lt;script type=&quot;math/tex&quot;&gt;\bm{R} = \bm{R}_x(\psi)\cdot \bm{R}_y(\theta)\cdot \bm{R}_z(\phi)&lt;/script&gt;
+is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\bm{R} = \begin{pmatrix}
+c_\phi c_\theta &amp; c_\phi s_\theta s_\psi - c_\psi s_\phi &amp; s_\phi s_\psi + c_\phi c_\psi s_\theta \\
+c_\theta s_\phi &amp; c_\phi c_\psi + s_\phi s_\theta s_\psi &amp; c_\psi s_\phi s_\theta - c_\phi s_\psi \\
+-s_\theta &amp; c_\theta s_\psi &amp; c_\theta c_\psi
+\end{pmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;First all, before calculating the angles, we should remind ourselves there are
+infinite solutions (the same rotation can be achieved with different sets
+of angles). Therefore, we restrict ourselves to the following range for
+the three angles&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+\phi &amp;= [-\pi, \pi], \\
+\theta &amp;= [-\pi/2, \pi/2], \\
+\psi &amp;= [-\pi, \pi].
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;angles-calculation&quot;&gt;Angles calculation&lt;/h3&gt;
+
+&lt;p&gt;We can easily see that &lt;script type=&quot;math/tex&quot;&gt;R_{31} = -\sin\theta&lt;/script&gt;, therefore,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta = -\arcsin(R_{31}).&lt;/script&gt;
+
+&lt;p&gt;Note that the solution is unique in the range we have chosen.
+In addition, we can find &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; from &lt;script type=&quot;math/tex&quot;&gt;\psi = \arctan(R_{32}/R_{33})&lt;/script&gt;.
+Numerically, it &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; is extracted through &lt;script type=&quot;math/tex&quot;&gt;\atantwo(\cdot, \cdot)&lt;/script&gt;
+which returns a value in
+the range &lt;script type=&quot;math/tex&quot;&gt;(-\pi, \pi]&lt;/script&gt; as we need it.
+However, one must be careful since the sign is important here.
+Indeed, if &lt;script type=&quot;math/tex&quot;&gt;\cos\theta &gt; 0&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;\psi=\atantwo(R_{32}, R_{33})&lt;/script&gt; but
+if the cosine is negative,
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\cos\theta &lt;0 %]]&gt;&lt;/script&gt; then &lt;script type=&quot;math/tex&quot;&gt;\psi = \atantwo(-R_{32}, -R_{33})&lt;/script&gt;.
+We can write this compactly as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi = \atantwo\Big(\frac{R_{32}}{\cos\theta}, \frac{R_{33}}{\cos\theta}\Big),&lt;/script&gt;
+
+&lt;p&gt;if &lt;script type=&quot;math/tex&quot;&gt;\cos\theta\neq 0&lt;/script&gt; (the case &lt;script type=&quot;math/tex&quot;&gt;\cos\theta =0&lt;/script&gt; is discussed below).
+For the angle &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;, we note that &lt;script type=&quot;math/tex&quot;&gt;R_{21}/R_{11} = \tan\phi&lt;/script&gt;.
+Therefore,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\phi = \atantwo\Big(\frac{R_{21}}{\cos\theta}, \frac{R_{11}}{\cos\theta}\Big),&lt;/script&gt;
+
+&lt;p&gt;where again we divided for &lt;script type=&quot;math/tex&quot;&gt;\cos\theta&lt;/script&gt; for taking the correct sign.
+Thus, we have a set of angles from our rotation matrix if
+&lt;script type=&quot;math/tex&quot;&gt;\cos\theta \neq 0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;if-bmcostheta--0&quot;&gt;If &lt;script type=&quot;math/tex&quot;&gt;\bm{\cos\theta = 0}&lt;/script&gt;&lt;/h3&gt;
+
+&lt;p&gt;If &lt;script type=&quot;math/tex&quot;&gt;\cos\theta&lt;/script&gt; is zero we cannot use the formulas above.
+Thus, we need to analyze two cases &lt;script type=&quot;math/tex&quot;&gt;\theta = \pm \pi/2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;bmtheta--pi2-case&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\bm{\theta = \pi/2}&lt;/script&gt; case&lt;/h4&gt;
+
+&lt;p&gt;It is easy to see that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+R_{12} &amp;= \sin\psi\cos\phi - \cos\psi\sin\phi = \sin(\psi-\phi),\\
+R_{13} &amp;= \cos\psi\cos\phi + \sin\psi\sin\phi = \cos(\psi-\phi).\\
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The rotation matrix become&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\bm{R} = \begin{pmatrix}
+0 &amp; \sin(\psi-\phi) &amp; \cos(\psi-\phi) \\
+0 &amp; \cos(\psi-\phi) &amp; -\sin(\psi-\phi) \\
+-1 &amp; 0 &amp; 0
+\end{pmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Any &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; that satisfy the following equation will be a
+valid solution:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\psi - \phi = \atantwo(R_{12}, R_{13}),&lt;/script&gt;
+
+&lt;p&gt;where only the difference is constrained. Thus, we can assign any value to
+one of the two angles, for instance &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;
+and take the value of &lt;script type=&quot;math/tex&quot;&gt;\psi = \phi + \atantwo(R_{12}, R_{13})&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;bmtheta---pi2-case&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\bm{\theta = -\pi/2}&lt;/script&gt; case&lt;/h4&gt;
+
+&lt;p&gt;This case is similar to the previous one&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+R_{12} &amp;= -\sin\psi\cos\phi - \cos\psi\sin\phi = -\sin(\psi+\phi),\\
+R_{13} &amp;= -\cos\psi\cos\phi + \sin\psi\sin\phi = -\cos(\psi+\phi).\\
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Therefore, the solution is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+\psi + \phi &amp;= \atantwo(-R_{12}, -R_{13}),\\
+\psi &amp;= -\phi + \atantwo(-R_{12}, -R_{13}).
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In both cases &lt;script type=&quot;math/tex&quot;&gt;\theta = \pm \pi/2&lt;/script&gt; we have that &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt;
+are linked. This phenomenon is called
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Gimbal_lock&quot;&gt;Gimbal lock&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;pseudo-code&quot;&gt;Pseudo-code&lt;/h3&gt;
+
+&lt;p&gt;To summarize, we can extract the angles with the following pseudo-code&lt;/p&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R31&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// cos(theta) != 0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;asin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R31&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;psi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R33&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R21&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this is arbitrary, could be anything&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R31&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;psi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;psi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This post ends here, if you have comments/feedbacks drop me an &lt;a href=&quot;mailto:i.moron.pirate@gmail.com&quot;&gt;email&lt;/a&gt;,
+they are appreciated.&lt;/p&gt;
+
+&lt;p&gt;Ahoy!&lt;/p&gt;</content><author><name>I, moron pirate</name></author><category term="Euler's angles" /><category term="Rotations" /><summary type="html"></summary></entry><entry><title type="html">How to deploy a locally built Jekyll site on GitHub</title><link href="https://imoronpirate.github.io/coding/deploy-static-site-on-github/" rel="alternate" type="text/html" title="How to deploy a locally built Jekyll site on GitHub" /><published>2019-02-07T13:38:00+01:00</published><updated>2019-02-07T13:38:00+01:00</updated><id>https://imoronpirate.github.io/coding/deploy-static-site-on-github</id><content type="html" xml:base="https://imoronpirate.github.io/coding/deploy-static-site-on-github/">&lt;p&gt;You may ask why I should build the blog locally when GitHub does it for me.
 Well there are several reasons, for instance if you use some unsupported plugins,
 but here I will discuss only one practical reason that it made me spent some
 time to fix it.&lt;/p&gt;

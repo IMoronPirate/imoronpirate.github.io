@@ -1,0 +1,607 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Everything you ever wanted to know about sex rotations | I, moron pirate</title>
+<meta name="description" content="">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="I, moron pirate">
+<meta property="og:title" content="Everything you ever wanted to know about sex rotations">
+<meta property="og:url" content="https://imoronpirate.github.io/math/coding/rotations/">
+
+
+  <meta property="og:description" content="">
+
+
+
+  <meta property="og:image" content="https://imoronpirate.github.io/assets/pirate-penguin-small.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-07-15T15:29:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://imoronpirate.github.io/math/coding/rotations/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://imoronpirate.github.io",
+      "logo": "https://imoronpirate.github.io/assets/pirate-penguin-small.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "I, moron pirate",
+      "url": "https://imoronpirate.github.io",
+      "sameAs": null
+    }
+  </script>
+
+
+
+  <meta name="google-site-verification" content="vntvKR6ts2d6Dk1T0rDzKeWP_APVCYUbPm0FG7JGLok" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="I, moron pirate Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">I, moron pirate</a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Everything you ever wanted to know about sex rotations">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="July 15, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Everything you ever wanted to know about <del>sex</del> rotations
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <script type="math/tex; mode=display">\newcommand{\bm}[1]{\boldsymbol{#1}}
+    \DeclareMathOperator{\atantwo}{atan2}</script>
+
+<p>Almost certainty, at some point, one has to deal with rotations.
+Promptly, one encounters different Euler’s angles representations,
+Quaternions, axis-angles representations, and so forth.</p>
+
+<p>In this post, I would present which parametrization I use that I found
+very useful in several situations I faced.</p>
+
+<h2 id="rodrigues-formula">Rodrigues’ formula</h2>
+
+<p>To construct the rotation matrix,
+given the rotation axis and the angle, the
+<a href="https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula" target="_blank" rel="noopener noreferrer">Rodrigues’ formula</a>
+is excellent.</p>
+
+<p>The rotation matrix around and axis <script type="math/tex">\bm{k}</script> (where <script type="math/tex">|\bm{k}|=1</script>)
+of an angle <script type="math/tex">\theta</script> is</p>
+
+<script type="math/tex; mode=display">\bm{R} = \bm{I} + (\sin\theta)\bm{K} + (1-\cos\theta)\bm{K}^2,</script>
+
+<p>where <script type="math/tex">\bm{K} = [\bm{k}]_\mathrm{x}</script> is the cross-product matrix given by</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\bm{K} \equiv \sum_{i=1}^3 (\bm{k} \times \hat{\bm{e}}_i) \otimes \hat{\bm{e}}_i =
+\begin{pmatrix}
+0 &-k_3 &k_2\\
+k_3 & 0 &-k_1\\
+-k_2 & k_1 &0
+\end{pmatrix} %]]></script>
+
+<h3 id="rotation-matrix-from-one-vector-to-another-one">Rotation matrix from one vector to another one</h3>
+
+<p>Usually we have two vectors, for instance describing two planes, and
+we would like to rotate one vector, <script type="math/tex">\bm{a}</script>, to the other one, <script type="math/tex">\bm{b}</script>.
+This is a perfect application for the Rodrigues’ formula.</p>
+
+<p>To rotate the vector <script type="math/tex">\bm{a}</script> in order to coincide with the
+vector <script type="math/tex">\bm{b}</script>, we need to rotate <script type="math/tex">\bm{a}</script> of an angle
+<script type="math/tex">\theta = \bm{a}\cdot \bm{b}</script> around the axis <script type="math/tex">\bm{u} = \bm{a} \times \bm{b}</script>.
+Therefore, we can use the Rodrigues’ formula for <script type="math/tex">\theta</script> and <script type="math/tex">\bm{u}</script>.</p>
+
+<h2 id="get-eulers-angles-from-the-rotation-matrix">Get Euler’s angles from the rotation matrix</h2>
+
+<p>Suppose that you used the Rodrigues’ formula and you have the rotation matrix:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\bm{R} = \begin{pmatrix}
+R_{11} & R_{12} & R_{13} \\
+R_{21} & R_{22} & R_{23} \\
+R_{31} & R_{32} & R_{33} \\
+\end{pmatrix}. %]]></script>
+
+<p>Then, you discovery that the API you are using for rotations accepts only
+the Euler’s angle. Than, the reaction is <em>f**k this! I quit!</em></p>
+
+<p>After you calm down, you ask yourself: ok how can I determined the angles from
+the rotation matrix? And then you realize: which angles? There are different
+representation of <a href="https://en.wikipedia.org/wiki/Euler_angles" target="_blank" rel="noopener noreferrer">Euler’s angles</a>!
+<em>I am really done with this s**t! I am out!</em></p>
+
+<p><em>Breath! Stay calm! Breath!</em></p>
+
+<p>The API is a <script type="math/tex">ZYX</script> representation, thanks to
+<a href="https://en.wikipedia.org/wiki/Euler_angles" target="_blank" rel="noopener noreferrer">Wikipedia</a> you have
+the rotation matrix as function of the angles.
+The rotation <script type="math/tex">ZYX</script> consists of a rotation of <script type="math/tex">\phi</script> around
+<script type="math/tex">z</script>-axis, then a rotation around <script type="math/tex">y</script>-axis of an angle <script type="math/tex">\theta</script>, and
+finally a rotation around the <script type="math/tex">x</script>-axis of an angle <script type="math/tex">\psi</script>.
+Therefore, the rotation matrix
+<script type="math/tex">\bm{R} = \bm{R}_x(\psi)\cdot \bm{R}_y(\theta)\cdot \bm{R}_z(\phi)</script>
+is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\bm{R} = \begin{pmatrix}
+c_\phi c_\theta & c_\phi s_\theta s_\psi - c_\psi s_\phi & s_\phi s_\psi + c_\phi c_\psi s_\theta \\
+c_\theta s_\phi & c_\phi c_\psi + s_\phi s_\theta s_\psi & c_\psi s_\phi s_\theta - c_\phi s_\psi \\
+-s_\theta & c_\theta s_\psi & c_\theta c_\psi
+\end{pmatrix}. %]]></script>
+
+<p>First all, before calculating the angles, we should remind ourselves there are
+infinite solutions (the same rotation can be achieved with different sets
+of angles). Therefore, we restrict ourselves to the following range for
+the three angles</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+\phi &= [-\pi, \pi], \\
+\theta &= [-\pi/2, \pi/2], \\
+\psi &= [-\pi, \pi].
+\end{aligned} %]]></script>
+
+<h3 id="angles-calculation">Angles calculation</h3>
+
+<p>We can easily see that <script type="math/tex">R_{31} = -\sin\theta</script>, therefore,</p>
+
+<script type="math/tex; mode=display">\theta = -\arcsin(R_{31}).</script>
+
+<p>Note that the solution is unique in the range we have chosen.
+In addition, we can find <script type="math/tex">\psi</script> from <script type="math/tex">\psi = \arctan(R_{32}/R_{33})</script>.
+Numerically, it <script type="math/tex">\psi</script> is extracted through <script type="math/tex">\atantwo(\cdot, \cdot)</script>
+which returns a value in
+the range <script type="math/tex">(-\pi, \pi]</script> as we need it.
+However, one must be careful since the sign is important here.
+Indeed, if <script type="math/tex">\cos\theta > 0</script> then <script type="math/tex">\psi=\atantwo(R_{32}, R_{33})</script> but
+if the cosine is negative,
+<script type="math/tex">% <![CDATA[
+\cos\theta <0 %]]></script> then <script type="math/tex">\psi = \atantwo(-R_{32}, -R_{33})</script>.
+We can write this compactly as</p>
+
+<script type="math/tex; mode=display">\psi = \atantwo\Big(\frac{R_{32}}{\cos\theta}, \frac{R_{33}}{\cos\theta}\Big),</script>
+
+<p>if <script type="math/tex">\cos\theta\neq 0</script> (the case <script type="math/tex">\cos\theta =0</script> is discussed below).
+For the angle <script type="math/tex">\phi</script>, we note that <script type="math/tex">R_{21}/R_{11} = \tan\phi</script>.
+Therefore,</p>
+
+<script type="math/tex; mode=display">\phi = \atantwo\Big(\frac{R_{21}}{\cos\theta}, \frac{R_{11}}{\cos\theta}\Big),</script>
+
+<p>where again we divided for <script type="math/tex">\cos\theta</script> for taking the correct sign.
+Thus, we have a set of angles from our rotation matrix if
+<script type="math/tex">\cos\theta \neq 0</script>.</p>
+
+<h3 id="if-bmcostheta--0">If <script type="math/tex">\bm{\cos\theta = 0}</script>
+</h3>
+
+<p>If <script type="math/tex">\cos\theta</script> is zero we cannot use the formulas above.
+Thus, we need to analyze two cases <script type="math/tex">\theta = \pm \pi/2</script>.</p>
+
+<h4 id="bmtheta--pi2-case">
+<script type="math/tex">\bm{\theta = \pi/2}</script> case</h4>
+
+<p>It is easy to see that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+R_{12} &= \sin\psi\cos\phi - \cos\psi\sin\phi = \sin(\psi-\phi),\\
+R_{13} &= \cos\psi\cos\phi + \sin\psi\sin\phi = \cos(\psi-\phi).\\
+\end{aligned} %]]></script>
+
+<p>The rotation matrix become</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\bm{R} = \begin{pmatrix}
+0 & \sin(\psi-\phi) & \cos(\psi-\phi) \\
+0 & \cos(\psi-\phi) & -\sin(\psi-\phi) \\
+-1 & 0 & 0
+\end{pmatrix}. %]]></script>
+
+<p>Any <script type="math/tex">\psi</script> and <script type="math/tex">\phi</script> that satisfy the following equation will be a
+valid solution:</p>
+
+<script type="math/tex; mode=display">\psi - \phi = \atantwo(R_{12}, R_{13}),</script>
+
+<p>where only the difference is constrained. Thus, we can assign any value to
+one of the two angles, for instance <script type="math/tex">\phi</script>
+and take the value of <script type="math/tex">\psi = \phi + \atantwo(R_{12}, R_{13})</script>.</p>
+
+<h4 id="bmtheta---pi2-case">
+<script type="math/tex">\bm{\theta = -\pi/2}</script> case</h4>
+
+<p>This case is similar to the previous one</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+R_{12} &= -\sin\psi\cos\phi - \cos\psi\sin\phi = -\sin(\psi+\phi),\\
+R_{13} &= -\cos\psi\cos\phi + \sin\psi\sin\phi = -\cos(\psi+\phi).\\
+\end{aligned} %]]></script>
+
+<p>Therefore, the solution is</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+\psi + \phi &= \atantwo(-R_{12}, -R_{13}),\\
+\psi &= -\phi + \atantwo(-R_{12}, -R_{13}).
+\end{aligned} %]]></script>
+
+<p>In both cases <script type="math/tex">\theta = \pm \pi/2</script> we have that <script type="math/tex">\psi</script> and <script type="math/tex">\phi</script>
+are linked. This phenomenon is called
+<a href="https://en.wikipedia.org/wiki/Gimbal_lock" target="_blank" rel="noopener noreferrer">Gimbal lock</a>.</p>
+
+<h3 id="pseudo-code">Pseudo-code</h3>
+
+<p>To summarize, we can extract the angles with the following pseudo-code</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">R31</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// cos(theta) != 0</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="o">-</span><span class="n">asin</span><span class="p">(</span><span class="n">R31</span><span class="p">);</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R32</span><span class="o">/</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">R33</span><span class="o">/</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R21</span><span class="o">/</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">R11</span><span class="o">/</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">));</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// this is arbitrary, could be anything</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">R31</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="n">phi</span> <span class="o">+</span> <span class="n">atan2</span><span class="p">(</span><span class="n">R12</span><span class="p">,</span> <span class="n">R13</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="o">-</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="o">-</span><span class="n">phi</span> <span class="o">+</span> <span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="n">R12</span><span class="p">,</span> <span class="n">R13</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<p>This post ends here, if you have comments/feedbacks drop me an <a href="mailto:i.moron.pirate@gmail.com">email</a>,
+they are appreciated.</p>
+
+<p>Ahoy!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#euler-s-angles" class="page__taxonomy-item" rel="tag">Euler's angles</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#rotations" class="page__taxonomy-item" rel="tag">Rotations</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#coding" class="page__taxonomy-item" rel="tag">coding</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/categories/#math" class="page__taxonomy-item" rel="tag">math</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-15T15:29:00+02:00">July 15, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Everything+you+ever+wanted+to+know+about+~~sex~~+rotations%20https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fimoronpirate.github.io%2Fmath%2Fcoding%2Frotations%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/coding/deploy-static-site-on-github/" class="pagination--pager" title="How to deploy a locally built Jekyll site on GitHub
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/coding/deploy-static-site-on-github/" rel="permalink">How to deploy a locally built Jekyll site on GitHub
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">You may ask why I should build the blog locally when GitHub does it for me.
+Well there are several reasons, for instance if you use some unsupported plugins,...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term...">
+    <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/IMoronPirate" rel="noopener noreferrer" target="_blank"><i class="fab fa-fw fa-github" aria-hidden="true"></i> IMoronPirate</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="mailto:i.moron.pirate@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> e-mail</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2019 I, moron pirate. Powered by <a href="https://jekyllrb.com" rel="noopener noreferrer" target="_blank">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="noopener noreferrer" target="_blank">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

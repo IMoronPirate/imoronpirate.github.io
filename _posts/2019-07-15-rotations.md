@@ -1,6 +1,6 @@
 ---
 title:  "Everything you ever wanted to know about ~~sex~~ rotations"
-date: 2019-07-05 10:26
+date: 2019-07-15 15:29
 categories: ["math", "coding"]
 tags: ["Euler's angles", "Rotations"]
 mathjax: true

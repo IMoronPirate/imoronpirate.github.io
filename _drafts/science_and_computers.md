@@ -15,17 +15,33 @@ $$
 > Science is what we understand well enough to explain to a computer.  Art is
 > everything else we do.
 
+**TOC**
+
+1. Introduction (why this sentence)
+2. Is this still true, today?
+3. examples in science today (ML that we do not understand)
+4. Is this still science?
+5. Maybe yes, but we are paying a price.
+  1. Gedanken-experiment if ML available at Newton time
+
+
+
 
 
 ---
 
 
-## Rodrigues' formula
+## Science is what we understand well enough to explain to a computer
 
-To construct the rotation matrix,
-given the rotation axis and the angle, the
-[Rodrigues' formula](https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula)
-is excellent.
+
+## Is this still true?
+
+Nowadays, with ML this is not true anymore.
+
+### Particle physics
+
+
+
 
 
 ### Pseudo-code

@@ -38,6 +38,9 @@ $$
 
 Nowadays, with ML this is not true anymore.
 
+why ML is different from the fact that we use for instance computers without
+knowing how they work but we still do science?
+
 ### Particle physics
 
 

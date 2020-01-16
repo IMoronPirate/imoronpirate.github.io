@@ -20,6 +20,7 @@ $$
 1. Introduction (why this sentence)
 2. Is this still true, today?
 3. examples in science today (ML that we do not understand)
+3. Ptolemaic system, Kepler and Netwon
 4. Is this still science?
 5. Maybe yes, but we are paying a price.
   1. Gedanken-experiment if ML available at Newton time
@@ -38,8 +39,19 @@ It is 1970
 
 Nowadays, with ML this is not true anymore.
 
+why ML is different from the fact that we use for instance computers without
+knowing how they work but we still do science?
+
 ### Particle physics
 
+
+### Random ideas
+
+There are two big problem with ML that violate the pronciples of science:
+1. The reproducibility: I cannot apply the same recipe several times, even if
+   you have the algorithm you miss the data for the training.
+2. the accumulation of knowledge: I cannot apply the knoledge to a
+   different/close problem
 
 
 

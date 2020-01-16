@@ -12,8 +12,8 @@ $$
 
 
 
-> Science is what we understand well enough to explain to a computer.  Art is
-> everything else we do.
+> Science is what we understand well enough to explain to a computer.
+> Art is everything else we do.
 
 **TOC**
 
@@ -26,12 +26,12 @@ $$
 
 
 
-
-
 ---
 
 
 ## Science is what we understand well enough to explain to a computer
+
+It is 1970
 
 
 ## Is this still true?

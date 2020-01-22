@@ -62,14 +62,14 @@
 
 theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dirt" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "I, moron pirate"
+title                    : "Making Sisyphus happy ..."
 title_separator          : "|"
-name                     : "I, moron pirate"
-description              : "The I, moron pirate's blog. A blog with a pinch of data science, computing, and physics"
+name                     : "Sisyphus"
+description              : "We should image Sisyphus happy ..."
 url                      : "https://imoronpirate.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -162,20 +162,20 @@ author:
     - label: "i.moron.pirate"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:i.moron.pirate@gmail.com
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+      # - label: "Website"
+      #   icon: "fas fa-fw fa-link"
       #      url: "https://imoronpirate.github.io/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      # - label: "Facebook"
+      #   icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "IMoronPirate"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/IMoronPirate"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+      # - label: "IMoronPirate"
+      #   icon: "fab fa-fw fa-github"
+      #   url: "https://github.com/IMoronPirate"
+      # - label: "Instagram"
+      #   icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
 # Site Footer
@@ -189,7 +189,7 @@ footer:
       # url:
     - label: "IMoronPirate"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/IMoronPirate"
+      # url: "https://github.com/IMoronPirate"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
